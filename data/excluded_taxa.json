@@ -131,6 +131,65 @@
       "removed_in": "V2.80",
       "removed_on": "2026-08-28",
       "took_with_it": "31 documented plant-fauna edges deleted, 1 animals left with no edge, 1 entry in data/plant_ranges.json, 1 entry in data/plant_occurrence_points.json"
+    },
+    {
+      "scientific_name": "Stachys pilosa var. pilosa",
+      "common_names": [
+        "Marsh Hedge Nettle (Marsh Woundwort)"
+      ],
+      "reason": "merged_into_stachys_pilosa",
+      "authority": "VASCAN v37.17 (dwca-vascan-v37.17.zip): the checklist accepts this name at species rank only, so the two rows are one taxon.",
+      "removed_in": "V2.82",
+      "removed_on": "2026-09-12",
+      "took_with_it": "11 documented plant-fauna edges re-pointed to Marsh Hedge Nettle, 1 entry in data/plant_ecoregions.json, 1 entry in data/plant_ranges.json, 1 entry in data/plant_occurrence_points.json",
+      "substitute": "Stachys pilosa (Marsh Hedge Nettle)"
+    },
+    {
+      "scientific_name": "Urtica gracilis subsp. gracilis",
+      "common_names": [],
+      "reason": "merged_into_urtica_gracilis",
+      "authority": "VASCAN v37.17 (dwca-vascan-v37.17.zip): the checklist accepts this name at species rank only, so the two rows are one taxon.",
+      "removed_in": "V2.82",
+      "removed_on": "2026-09-12",
+      "took_with_it": "7 documented plant-fauna edges re-pointed to Slender Nettle, 1 entry in data/plant_ecoregions.json, 1 entry in data/plant_ranges.json, 1 entry in data/plant_occurrence_points.json",
+      "substitute": "Urtica gracilis (Slender Nettle)",
+      "note": "the common name 'Stinging Nettle' is not listed above because it continues on the surviving row (Urtica gracilis) — V2.80 renamed Urtica dioica onto this invalid subspecies and gave it that name, and listing it here would make validate_excluded_taxa report the survivor as a re-added exclusion"
+    },
+    {
+      "scientific_name": "Spiraea alba var. latifolia",
+      "common_names": [
+        "Pink Spirea (Rose Meadowsweet)"
+      ],
+      "reason": "merged_into_spiraea_alba",
+      "authority": "VASCAN v37.17 (dwca-vascan-v37.17.zip): the checklist accepts this name at species rank only, so the two rows are one taxon.",
+      "removed_in": "V2.82",
+      "removed_on": "2026-09-12",
+      "took_with_it": "7 documented plant-fauna edges re-pointed to Meadowsweet",
+      "substitute": "Spiraea alba (Meadowsweet)"
+    },
+    {
+      "scientific_name": "Dodecatheon pulchellum",
+      "common_names": [
+        "Shooting Star"
+      ],
+      "reason": "merged_into_primula_pauciflora",
+      "authority": "VASCAN v37.17 (dwca-vascan-v37.17.zip): a synonym of the accepted name already carried here; the two rows are one taxon.",
+      "removed_in": "V2.82",
+      "removed_on": "2026-09-12",
+      "took_with_it": "11 documented plant-fauna edges re-pointed to Saline Shooting Star, 1 entry in data/plant_ecoregions.json, 1 entry in data/plant_ranges.json, 1 entry in data/plant_occurrence_points.json",
+      "substitute": "Primula pauciflora (Saline Shooting Star)"
+    },
+    {
+      "scientific_name": "Hedysarum alpinum",
+      "common_names": [
+        "Sweet Broom (Alpine Sweetvetch)"
+      ],
+      "reason": "merged_into_hedysarum_americanum",
+      "authority": "VASCAN v37.17 (dwca-vascan-v37.17.zip): a synonym of the accepted name already carried here; the two rows are one taxon.",
+      "removed_in": "V2.82",
+      "removed_on": "2026-09-12",
+      "took_with_it": "10 documented plant-fauna edges re-pointed to Alpine Hedysarum (Bear Root), 1 entry in data/plant_ecoregions.json, 1 entry in data/plant_ranges.json, 1 entry in data/plant_occurrence_points.json",
+      "substitute": "Hedysarum americanum (Alpine Hedysarum (Bear Root))"
     }
   ]
 }

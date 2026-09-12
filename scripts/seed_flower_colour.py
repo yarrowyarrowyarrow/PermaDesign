@@ -114,7 +114,7 @@ CORRECTIONS: dict = {
     "Clematis occidentalis":  ("blue",   "name", "Blue Clematis"),
     "Iris missouriensis":     ("blue",   "name", "Western Blue Iris"),
     "Viola adunca":           ("blue",   "name", "Early Blue Violet"),
-    "Anticlea elegans":       ("white",  "name", "White Camas"),
+    "Anticlea elegans":       ("white",  "name", "Mountain Death Camas (White Camas)"),
     "Oenothera nuttallii":    ("white",  "name", "White Evening Primrose"),
     "Geranium richardsonii":  ("white",  "name", "White Geranium"),
     "Symphyotrichum ericoides": ("white", "name",

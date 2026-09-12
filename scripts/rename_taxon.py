@@ -26,14 +26,24 @@ What a rename does NOT touch, and why that is the good news
 
 What it deliberately leaves alone
 ---------------------------------
-**Nativity.** It would be easy to write the province list in at the same time,
-transcribed from a ``--suggest`` printout. That is a hand-copied fact wearing
-the costume of a sourced one, and this catalogue's whole argument against its
-old nativity data was exactly that. Rename first, then re-run
-``fetch_flora_nativity.py --from-archive`` and ``ingest_flora_nativity.py
---apply``: under the corrected name the lookup now finds the taxon and writes
-the provinces **and** ``native_provinces_source='flora'`` from the archive
-itself.
+**Nativity, when the new name is a judgement.** It would be easy to write the
+province list in at the same time, transcribed from a ``--suggest`` printout.
+That is a hand-copied fact wearing the costume of a sourced one, and this
+catalogue's whole argument against its old nativity data was exactly that.
+Rename first, then re-run ``fetch_flora_nativity.py --from-archive`` and
+``ingest_flora_nativity.py --apply``: under the corrected name the lookup now
+finds the taxon and writes the provinces **and**
+``native_provinces_source='flora'`` from the archive itself.
+
+**But not when the new name is the archive's own answer (V2.82).** If
+``flora_nativity.json`` recorded ``accepted_name`` for the old name and the new
+name IS that name, the province list was never a claim about the old name --
+VASCAN was asked about a synonym and replied about the accepted taxon, saying
+so in the record. Re-keying that record and keeping the source is therefore not
+a transcription, and clearing it would publish *Not established* for a species
+the checklist has already settled. V2.80 renamed eight species and accepted
+exactly that limbo for all eight; this is the case where there is nothing to
+wait for.
 
 The old name is kept on the row as ``renamed_from``, so nobody has to read a
 commit log to find out that the records filed here arrived under another name.
@@ -68,6 +78,10 @@ BY_SCIENTIFIC = ("plant_ecoregions.json", "plant_ranges.json",
                  "fetched/plant_occurrences.json")
 PLANT_FILES = ("plants_master.json", "garden_plants.json")
 
+#: The VASCAN extract, keyed by the name that was **asked about** rather than by
+#: the name the checklist answered with (V2.82).
+NATIVITY = "fetched/flora_nativity.json"
+
 
 def _load(name: str):
     with open(PROJECT_ROOT / "data" / name, encoding="utf-8") as fh:
@@ -92,6 +106,21 @@ def _save(name: str, data) -> None:
     path.write_text(text + "\n", encoding="utf-8")
 
 
+def _rekey(mapping: dict, old: str, new: str) -> dict:
+    """``mapping`` with ``old``'s value moved to ``new``, **in sorted order**.
+
+    ``pop`` then assign appends, and every one of these files is written in
+    name order, so a rename used to drop the species at the bottom of a 400-key
+    file -- a two-line change rendered as a 200-line diff, and the next rename
+    of the same row rendered as another one. Sorted in, sorted out; a file that
+    was not sorted to begin with is left in its own order.
+    """
+    was_sorted = list(mapping) == sorted(mapping)
+    value = mapping.pop(old)
+    mapping[new] = value
+    return dict(sorted(mapping.items())) if was_sorted else mapping
+
+
 def _indent_of(path: Path) -> int:
     """The file's own indent width, or ``0`` meaning compact.
 
@@ -109,6 +138,19 @@ def _indent_of(path: Path) -> int:
     if not second.strip():
         return 0
     return len(second) - len(second.lstrip(" ")) or 2
+
+
+from src.taxon_names import binomial                          # noqa: E402
+
+
+def _nativity_record(old: str) -> dict:
+    """The VASCAN extract's entry for ``old``, or ``{}``."""
+    try:
+        blob = _load(NATIVITY)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+    got = ((blob or {}).get("results") or {}).get(old)
+    return got if isinstance(got, dict) else {}
 
 
 def survey(old: str, new: str) -> dict:
@@ -150,9 +192,18 @@ def survey(old: str, new: str) -> dict:
         if old in species:
             hits[name] = species[old]
 
+    # Is the new name the one the archive itself resolved the old one to? If so
+    # the recorded province list is about the taxon we are renaming TO, and
+    # clearing its source would throw away a sourced fact to avoid a
+    # transcription that is not happening.
+    nativity = _nativity_record(old)
+    carries = bool(nativity.get("accepted_name")
+                   and binomial(nativity["accepted_name"]) == new)
+
     return {"old": old, "new": new, "plant_file": plant_file, "row": row,
             "common": common, "data_files": hits, "clash": clash,
-            "shares_common": shares_common}
+            "shares_common": shares_common,
+            "nativity": nativity, "carries_nativity": carries}
 
 
 def report(s: dict) -> None:
@@ -170,6 +221,20 @@ def report(s: dict) -> None:
     else:
         print(f"  URL /plants/{s['common'].lower().replace(' ', '-')}/ is "
               f"unaffected")
+    if s["carries_nativity"]:
+        rec = s["nativity"]
+        print(f"  nativity KEPT: the archive resolved {s['old']} to "
+              f"{rec['accepted_name']!r} and recorded {rec.get('native_provinces')!r}"
+              f" — that record is about the new name, so it is re-keyed in "
+              f"data/{NATIVITY} and native_provinces_source stands")
+    elif s["nativity"]:
+        print(f"  nativity CLEARED: the archive's accepted name for "
+              f"{s['old']} is {s['nativity'].get('accepted_name')!r}, not "
+              f"{s['new']} — so its province list is about a different taxon. "
+              f"Re-run fetch_flora_nativity.py --from-archive, then "
+              f"ingest_flora_nativity.py --apply.")
+    else:
+        print(f"  nativity CLEARED: no entry in data/{NATIVITY} to carry")
     if s["clash"]:
         print(f"  REFUSING: {s['new']} is already in data/{s['clash']}")
 
@@ -185,22 +250,48 @@ def apply(s: dict, authority: str) -> None:
     for row in rows:
         if isinstance(row, dict) and row.get("scientific_name") == s["old"]:
             row["scientific_name"] = s["new"]
-            row["renamed_from"] = s["old"]
+            # A second rename must not erase the first (V2.82). Two of these
+            # rows had already moved once -- Oenothera caespitosa -> O.
+            # cespitosa subsp. cespitosa -> O. cespitosa -- and overwriting
+            # the field loses the name a reader is most likely to search for,
+            # which is the whole reason it exists.
+            row["renamed_from"] = ", ".join(
+                dict.fromkeys([*(t.strip() for t in
+                                 (row.get("renamed_from") or "").split(",")
+                                 if t.strip()), s["old"]]))
             row["renamed_authority"] = authority
             row["renamed_on"] = date.today().isoformat()
             # The old nativity was filed against the old name and is exactly
             # what the re-run is for. Clearing it is the honest state in
             # between: unknown, rather than a claim about a different taxon.
-            row["native_provinces_source"] = ""
+            #
+            # Unless (V2.82) the new name IS the accepted name the archive
+            # resolved the old one to. Then the record was never about the old
+            # name -- VASCAN answered for the accepted taxon and said so in
+            # `accepted_name` -- and clearing the source would report a sourced
+            # fact as unknown.
+            if not s["carries_nativity"]:
+                row["native_provinces_source"] = ""
     _save(s["plant_file"], rows)
+
+    if s["carries_nativity"]:
+        blob = _load(NATIVITY)
+        blob["results"] = _rekey(blob["results"], s["old"], s["new"])
+        _save(NATIVITY, blob)
 
     for name, value in s["data_files"].items():
         blob = _load(name)
-        blob["species"].pop(s["old"], None)
-        blob["species"][s["new"]] = value
+        blob["species"] = _rekey(blob["species"], s["old"], s["new"])
         _save(name, blob)
 
-    print(f"\nRenamed. {len(s['data_files'])} data file(s) re-keyed.")
+    print(f"\nRenamed. {len(s['data_files']) + (1 if s['carries_nativity'] else 0)}"
+          f" data file(s) re-keyed.")
+    if s["carries_nativity"]:
+        print("  native_provinces_source kept; nothing to re-run.")
+    else:
+        print("  native_provinces_source cleared; re-run "
+              "fetch_flora_nativity.py --from-archive then "
+              "ingest_flora_nativity.py --apply.")
 
 
 def main(argv=None) -> int:

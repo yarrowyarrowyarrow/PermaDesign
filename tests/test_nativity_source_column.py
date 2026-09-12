@@ -70,16 +70,34 @@ class TestTheColumnExistsAndIsSeeded(unittest.TestCase):
         self.assertEqual(got["note"], "")
 
     def test_an_unsourced_species_still_names_its_heuristic(self):
-        """~20 species VASCAN could not settle. Blank is the honest answer and
-        the derived note is still the right thing to show."""
-        # Was Urtica dioica until V2.80 renamed it to the accepted taxon --
-        # which is itself unsourced until the archive is re-read under the new
-        # name, so it still exercises this path, but Spiraea douglasii is the
-        # stabler pin: VASCAN records it and not for these provinces, so no
-        # rename will resolve it.
-        got = provenance(self.rows["Spiraea douglasii"])
+        """A species VASCAN cannot settle keeps a blank source, and the derived
+        note is still the right thing to show.
+
+        **This test pinned to a real row twice and lost it twice** (V2.82). It
+        was *Urtica dioica* until V2.80 renamed that away, then *Spiraea
+        douglasii* — chosen in the same increment that **removed** *Spiraea
+        douglasii* from the catalogue, so it has been failing with a `KeyError`
+        ever since, red behind a suite nobody could run to the end in a
+        container. Every row is sourced today, which is the good outcome and
+        leaves no row to pin to at all.
+
+        So the row is synthetic now. What is under test is `provenance`, not the
+        catalogue's contents, and an assertion about a *fixed* input cannot be
+        invalidated by the data improving.
+        """
+        got = provenance({"scientific_name": "Testus unsourcedus",
+                          "native_provinces": "AB,SK", SOURCE_FIELD: ""})
         self.assertTrue(got["inferred"])
         self.assertIn("ecoregions that continue across", got["note"])
+
+    def test_no_published_row_is_unsourced_any_more(self):
+        """The other half of the one above, asserted where it belongs: on the
+        data rather than on a hand-picked example of it. 20 rows were unsourced
+        when the column shipped in V2.80; the renames and merges of V2.80-V2.82
+        took that to zero."""
+        unsourced = sorted(name for name, row in self.rows.items()
+                           if not (row.get(SOURCE_FIELD) or "").strip())
+        self.assertEqual(unsourced, [], f"unsourced: {unsourced}")
 
 
 class TestTheNarrowingReachedTheDatabase(unittest.TestCase):

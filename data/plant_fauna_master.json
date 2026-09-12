@@ -238,21 +238,7 @@
   "source": "acorn_sheldon_butterflies_ab"
  },
  {
-  "plant": "Slender Nettle",
-  "fauna": "Aglais milberti",
-  "relationship": "larval_host",
-  "specificity": "specialist",
-  "source": "acorn_sheldon_butterflies_ab"
- },
- {
   "plant": "Stinging Nettle",
-  "fauna": "Vanessa atalanta",
-  "relationship": "larval_host",
-  "specificity": "specialist",
-  "source": "acorn_sheldon_butterflies_ab"
- },
- {
-  "plant": "Slender Nettle",
   "fauna": "Vanessa atalanta",
   "relationship": "larval_host",
   "specificity": "specialist",
@@ -476,11 +462,12 @@
   "source": "acorn_sheldon_butterflies_ab"
  },
  {
-  "plant": "Sweet Broom (Alpine Sweetvetch)",
+  "plant": "Alpine Hedysarum (Bear Root)",
   "fauna": "Glaucopsyche lygdamus",
   "relationship": "larval_host",
   "specificity": "generalist",
-  "source": "acorn_sheldon_butterflies_ab"
+  "source": "acorn_sheldon_butterflies_ab",
+  "renamed_from": "Hedysarum alpinum"
  },
  {
   "plant": "Canada Milk Vetch",
@@ -518,11 +505,12 @@
   "source": "acorn_sheldon_butterflies_ab"
  },
  {
-  "plant": "Sweet Broom (Alpine Sweetvetch)",
+  "plant": "Alpine Hedysarum (Bear Root)",
   "fauna": "Cupido amyntula",
   "relationship": "larval_host",
   "specificity": "generalist",
-  "source": "acorn_sheldon_butterflies_ab"
+  "source": "acorn_sheldon_butterflies_ab",
+  "renamed_from": "Hedysarum alpinum"
  },
  {
   "plant": "Paper Birch",
@@ -896,7 +884,7 @@
   "source": "cornell_birds_of_the_world"
  },
  {
-  "plant": "Lyalls Penstemon",
+  "plant": "Lyall's Penstemon",
   "fauna": "Archilochus colubris",
   "relationship": "nectar",
   "specificity": "generalist",
@@ -973,7 +961,7 @@
   "source": "cornell_birds_of_the_world"
  },
  {
-  "plant": "Lyalls Penstemon",
+  "plant": "Lyall's Penstemon",
   "fauna": "Selasphorus rufus",
   "relationship": "nectar",
   "specificity": "generalist",
@@ -3440,7 +3428,7 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Boreale Oxytropis",
+  "plant": "Boreal Oxytropis",
   "fauna": "Bombus nevadensis",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
@@ -7717,46 +7705,52 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Halictus rubicundus",
   "relationship": "pollen",
   "source": "globi_bascompte_robertson_c_1929_flowers_and_insects_lists_of_visi",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Colletes inaequalis",
   "relationship": "pollen",
   "source": "globi_bascompte_robertson_c_1929_flowers_and_insects_lists_of_visi",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Bombus mixtus",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Bombus pensylvanicus",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Bombus borealis",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Bombus fervidus",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
   "plant": "Marsh Marigold",
@@ -8007,15 +8001,17 @@
   "plant": "Meadowsweet",
   "fauna": "Bombus griseocollis",
   "relationship": "nectar",
-  "source": "globi_clint_otto_russ_bryant_and_ned_h_euliss_jr_2020_the_u_s_geol",
-  "notes": "GloBI flowersVisitedBy"
+  "source": "globi_clint_otto_russ_bryant_and_ned_h_euliss_jr_2020_the_u_s_geol,globi_inaturalist_org",
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Spiraea alba var. latifolia"
  },
  {
   "plant": "Meadowsweet",
   "fauna": "Bombus ternarius",
   "relationship": "nectar",
-  "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
+  "source": "globi_www_bumblebeewatch_org,globi_inaturalist_org",
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Spiraea alba var. latifolia"
  },
  {
   "plant": "Meadowsweet",
@@ -9488,41 +9484,6 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Pink Spirea (Rose Meadowsweet)",
-  "fauna": "Bombus terricola",
-  "relationship": "nectar",
-  "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Pink Spirea (Rose Meadowsweet)",
-  "fauna": "Bombus rufocinctus",
-  "relationship": "nectar",
-  "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Pink Spirea (Rose Meadowsweet)",
-  "fauna": "Bombus perplexus",
-  "relationship": "nectar",
-  "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Pink Spirea (Rose Meadowsweet)",
-  "fauna": "Bombus griseocollis",
-  "relationship": "nectar",
-  "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Pink Spirea (Rose Meadowsweet)",
-  "fauna": "Bombus ternarius",
-  "relationship": "nectar",
-  "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
   "plant": "Plains Prickly Pear Cactus",
   "fauna": "Bombus nevadensis",
   "relationship": "nectar",
@@ -9558,42 +9519,42 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Bombus centralis",
   "relationship": "pollen",
   "source": "globi_bascompte_clements_r_e_and_f_l_long_1923_experimental_pollin",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Bombus balteatus",
   "relationship": "pollen",
   "source": "globi_bascompte_clements_r_e_and_f_l_long_1923_experimental_pollin",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Agapostemon virescens",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Bombus flavifrons",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Bombus bifarius",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Bombus griseocollis",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
@@ -11416,8 +11377,9 @@
   "plant": "Saline Shooting Star",
   "fauna": "Bombus melanopygus",
   "relationship": "nectar",
-  "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "source": "globi_inaturalist_org,globi_www_bumblebeewatch_org",
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Dodecatheon pulchellum"
  },
  {
   "plant": "Saline Shooting Star",
@@ -11812,60 +11774,12 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Shooting Star",
-  "fauna": "Bombus occidentalis",
-  "relationship": "nectar",
-  "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Shooting Star",
-  "fauna": "Bombus melanopygus",
-  "relationship": "nectar",
-  "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Shooting Star",
-  "fauna": "Bombus mixtus",
-  "relationship": "nectar",
-  "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Shooting Star",
-  "fauna": "Bombus bifarius",
-  "relationship": "nectar",
-  "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Shooting Star",
-  "fauna": "Bombus terricola",
-  "relationship": "nectar",
-  "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Shooting Star",
-  "fauna": "Bombus ternarius",
-  "relationship": "nectar",
-  "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Shooting Star",
-  "fauna": "Bombus mixtus",
-  "relationship": "pollen",
-  "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
-  "notes": "GloBI pollinatedBy"
- },
- {
-  "plant": "Shooting Star",
+  "plant": "Saline Shooting Star",
   "fauna": "Bombus centralis",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Dodecatheon pulchellum"
  },
  {
   "plant": "Showy Aster",
@@ -14105,7 +14019,8 @@
   "fauna": "Vanessa atalanta",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Urtica gracilis subsp. gracilis"
  },
  {
   "plant": "Sulphur Hedysarum",
@@ -14164,53 +14079,60 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Sweet Broom (Alpine Sweetvetch)",
+  "plant": "Alpine Hedysarum (Bear Root)",
   "fauna": "Bombus bifarius",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Hedysarum alpinum"
  },
  {
-  "plant": "Sweet Broom (Alpine Sweetvetch)",
+  "plant": "Alpine Hedysarum (Bear Root)",
   "fauna": "Bombus frigidus",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Hedysarum alpinum"
  },
  {
-  "plant": "Sweet Broom (Alpine Sweetvetch)",
+  "plant": "Alpine Hedysarum (Bear Root)",
   "fauna": "Bombus nevadensis",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Hedysarum alpinum"
  },
  {
-  "plant": "Sweet Broom (Alpine Sweetvetch)",
+  "plant": "Alpine Hedysarum (Bear Root)",
   "fauna": "Bombus mixtus",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Hedysarum alpinum"
  },
  {
-  "plant": "Sweet Broom (Alpine Sweetvetch)",
+  "plant": "Alpine Hedysarum (Bear Root)",
   "fauna": "Cupido amyntula",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Hedysarum alpinum"
  },
  {
-  "plant": "Sweet Broom (Alpine Sweetvetch)",
+  "plant": "Alpine Hedysarum (Bear Root)",
   "fauna": "Glaucopsyche lygdamus",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Hedysarum alpinum"
  },
  {
-  "plant": "Sweet Broom (Alpine Sweetvetch)",
+  "plant": "Alpine Hedysarum (Bear Root)",
   "fauna": "Bombus ternarius",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Hedysarum alpinum"
  },
  {
   "plant": "Switchgrass",
@@ -15228,7 +15150,7 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "White Camas",
+  "plant": "Mountain Death Camas (White Camas)",
   "fauna": "Papilio canadensis",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
@@ -17900,140 +17822,140 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Eucera fulvitarsis",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus nevadensis",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus centralis",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Anthophora ursina",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus bifarius",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus centralis",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Melecta pacifica",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Melecta separata",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Halictus rubicundus",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus appositus",
   "relationship": "nectar",
   "source": "globi_lamanna_ja_burkle_la_belote_rt_myers_ja_biotic_and_abiotic_d",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus huntii",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus griseocollis",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus nevadensis",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus fervidus",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus insularis",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus bifarius",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus rufocinctus",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus flavifrons",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus mixtus",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Bombus vagans",
   "relationship": "nectar",
   "source": "globi_www_bumblebeewatch_org",
@@ -18474,7 +18396,7 @@
   "notes": "GloBI eatenBy"
  },
  {
-  "plant": "White Camas",
+  "plant": "Mountain Death Camas (White Camas)",
   "fauna": "Lagopus leucura",
   "relationship": "fruit_food",
   "source": "globi_hurlbertlab_dietdatabaseweeden_r_b_1967_seasonal_and_geograp",
@@ -24613,11 +24535,12 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Limenitis archippus",
   "relationship": "pollen",
   "source": "globi_bascompte_robertson_c_1929_flowers_and_insects_lists_of_visi",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
   "plant": "Marsh Marigold",
@@ -26349,20 +26272,6 @@
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Pink Spirea (Rose Meadowsweet)",
-  "fauna": "Ctenucha virginica",
-  "relationship": "nectar",
-  "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Pink Spirea (Rose Meadowsweet)",
-  "fauna": "Dolichovespula arenaria",
-  "relationship": "nectar",
-  "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
   "plant": "Plains Prickly Pear Cactus",
   "fauna": "Agapostemon texanus",
   "relationship": "nectar",
@@ -26377,56 +26286,56 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Andrena vicina",
   "relationship": "pollen",
   "source": "globi_bascompte_clements_r_e_and_f_l_long_1923_experimental_pollin",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Andrena prunorum",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Hylaeus annulatus",
   "relationship": "nectar",
   "source": "globi_clint_otto_russ_bryant_and_ned_h_euliss_jr_2020_the_u_s_geol",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Andrena miranda",
   "relationship": "nectar",
   "source": "globi_clint_otto_russ_bryant_and_ned_h_euliss_jr_2020_the_u_s_geol",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Halictus confusus",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Vanessa virginiensis",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Callophrys niphon",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Trichiotinus assimilis",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
@@ -27644,7 +27553,7 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Rosy Pussytoes (Littleleaf Pussytoes)",
+  "plant": "Littleleaf Pussytoes",
   "fauna": "Andrena scurra",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
@@ -31837,21 +31746,21 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "White Camas",
+  "plant": "Mountain Death Camas (White Camas)",
   "fauna": "Sphaerophoria contigua",
   "relationship": "nectar",
   "source": "globi_clint_otto_russ_bryant_and_ned_h_euliss_jr_2020_the_u_s_geol",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "White Camas",
+  "plant": "Mountain Death Camas (White Camas)",
   "fauna": "Hylaeus annulatus",
   "relationship": "nectar",
   "source": "globi_clint_otto_russ_bryant_and_ned_h_euliss_jr_2020_the_u_s_geol",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "White Camas",
+  "plant": "Mountain Death Camas (White Camas)",
   "fauna": "Trichodes ornatus",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
@@ -35332,49 +35241,49 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Andrena amphibola",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Eucera edwardsii",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Eucera edwardsii",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Halictus farinosus",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Osmia montana",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Hoplitis hypocrita",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Lasioglossum pruinosum",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
@@ -41389,7 +41298,7 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Lyalls Penstemon",
+  "plant": "Lyall's Penstemon",
   "fauna": "Pseudomasaris vespoides",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
@@ -41592,32 +41501,36 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Mordellistena ornata",
   "relationship": "pollen",
   "source": "globi_bascompte_robertson_c_1929_flowers_and_insects_lists_of_visi",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Calliopsis andreniformis",
   "relationship": "pollen",
   "source": "globi_bascompte_robertson_c_1929_flowers_and_insects_lists_of_visi",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Senotainia trilineata",
   "relationship": "pollen",
   "source": "globi_bascompte_robertson_c_1929_flowers_and_insects_lists_of_visi",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
-  "plant": "Marsh Hedge Nettle (Marsh Woundwort)",
+  "plant": "Marsh Hedge Nettle",
   "fauna": "Poecilognathus sulphureus",
   "relationship": "pollen",
   "source": "globi_bascompte_robertson_c_1929_flowers_and_insects_lists_of_visi",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Stachys pilosa var. pilosa"
  },
  {
   "plant": "Marsh Marigold",
@@ -43146,28 +43059,28 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Andrena cyanophila",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Panurginus atriceps",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Andrena melanochroa",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Prairie Cinquefoil (Tall Cinquefoil)",
+  "plant": "Tall Cinquefoil",
   "fauna": "Hylaeus affinis",
   "relationship": "nectar",
   "source": "globi_clint_otto_russ_bryant_and_ned_h_euliss_jr_2020_the_u_s_geol",
@@ -44623,25 +44536,28 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Shooting Star",
+  "plant": "Saline Shooting Star",
   "fauna": "Andrena nigrihirta",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Dodecatheon pulchellum"
  },
  {
-  "plant": "Shooting Star",
+  "plant": "Saline Shooting Star",
   "fauna": "Habropoda cineraria",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Dodecatheon pulchellum"
  },
  {
-  "plant": "Shooting Star",
+  "plant": "Saline Shooting Star",
   "fauna": "Andrena schuhi",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
-  "notes": "GloBI pollinatedBy"
+  "notes": "GloBI pollinatedBy",
+  "renamed_from": "Dodecatheon pulchellum"
  },
  {
   "plant": "Showy Aster",
@@ -45645,21 +45561,21 @@
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Slender Nettle",
+  "plant": "Stinging Nettle",
   "fauna": "Hyphantria cunea",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Slender Nettle",
+  "plant": "Stinging Nettle",
   "fauna": "Agromyza pseudoreptans",
   "relationship": "larval_host",
   "source": "globi_inaturalist_org",
   "notes": "GloBI hostOf"
  },
  {
-  "plant": "Slender Nettle",
+  "plant": "Stinging Nettle",
   "fauna": "Limenitis lorquini",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
@@ -46748,28 +46664,16 @@
   "fauna": "Heterogaster behrensii",
   "relationship": "larval_host",
   "source": "globi_bins_boldsystems_org",
-  "notes": "GloBI hostOf"
+  "notes": "GloBI hostOf",
+  "renamed_from": "Urtica gracilis subsp. gracilis"
  },
  {
   "plant": "Stinging Nettle",
   "fauna": "Neurocolpus nubilus",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
- },
- {
-  "plant": "Stinging Nettle",
-  "fauna": "Agromyza pseudoreptans",
-  "relationship": "larval_host",
-  "source": "globi_inaturalist_org",
-  "notes": "GloBI hostOf"
- },
- {
-  "plant": "Stinging Nettle",
-  "fauna": "Limenitis lorquini",
-  "relationship": "nectar",
-  "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Urtica gracilis subsp. gracilis"
  },
  {
   "plant": "Sulphur Hedysarum",
@@ -46821,11 +46725,12 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Sweet Broom (Alpine Sweetvetch)",
+  "plant": "Alpine Hedysarum (Bear Root)",
   "fauna": "Rheumaptera hastata",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
-  "notes": "GloBI flowersVisitedBy"
+  "notes": "GloBI flowersVisitedBy",
+  "renamed_from": "Hedysarum alpinum"
  },
  {
   "plant": "Switchgrass",
@@ -47738,28 +47643,28 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "White Camas",
+  "plant": "Mountain Death Camas (White Camas)",
   "fauna": "Grammoptera subargentata",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "White Camas",
+  "plant": "Mountain Death Camas (White Camas)",
   "fauna": "Gnathacmaeops pratensis",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "White Camas",
+  "plant": "Mountain Death Camas (White Camas)",
   "fauna": "Andrena astragali",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "White Camas",
+  "plant": "Mountain Death Camas (White Camas)",
   "fauna": "Trachysida aspera",
   "relationship": "nectar",
   "source": "globi_inaturalist_org",
@@ -50492,56 +50397,56 @@
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Andrena lawrencei",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Habropoda cineraria",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Melecta thoracica",
   "relationship": "pollen",
   "source": "globi_guzman_laura_melissa_kelly_tyler_elle_elizabeth_2022_a_datas",
   "notes": "GloBI pollinatedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Melecta thoracica",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Osmia integra",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Lasioglossum egregium",
   "relationship": "nectar",
   "source": "globi_ecdysis_org",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Osmia kincaidii",
   "relationship": "nectar",
   "source": "globi_lamanna_ja_burkle_la_belote_rt_myers_ja_biotic_and_abiotic_d",
   "notes": "GloBI flowersVisitedBy"
  },
  {
-  "plant": "Yellow Pucoon",
+  "plant": "Yellow Puccoon",
   "fauna": "Anthophora pacifica",
   "relationship": "nectar",
   "source": "globi_lamanna_ja_burkle_la_belote_rt_myers_ja_biotic_and_abiotic_d",
@@ -50821,7 +50726,7 @@
   "notes": "GloBI eatenBy"
  },
  {
-  "plant": "Slender Nettle",
+  "plant": "Stinging Nettle",
   "fauna": "Polygonia interrogationis",
   "relationship": "larval_host",
   "source": "globi_inaturalist_org",

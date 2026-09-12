@@ -161,7 +161,7 @@ GEOMETRY = [
     ("herb_onion",     "Onion (grassy)", "Upright strap/linear basal leaves (Allium).",
      "Nodding Onion",     _plain("wildflower", "Allium cernuum", 0.4, 0.3, "Nodding Onion")),
     ("herb_pussytoes", "Pussytoes (mat)", "Low cushion of spoon-shaped basal leaves (Antennaria).",
-     "Rosy Pussytoes",    _plain("wildflower", "Antennaria rosea", 0.2, 0.4, "Rosy Pussytoes")),
+     "Pink Pussytoes",    _plain("wildflower", "Antennaria rosea", 0.2, 0.4, "Pink Pussytoes")),
     # A second specimen for five herb forms, chosen so the form is HELD CONSTANT
     # and only the leaf character changes. That is what the V2.29 variant work
     # actually does — 46 baked archetypes across the 211 wildflowers, keyed by

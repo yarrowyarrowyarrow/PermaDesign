@@ -104,8 +104,16 @@ class TestTheClassifierAgainstTheShippedData(unittest.TestCase):
     #: classifier regression. This one is the former, and the numbers to check
     #: it against are in `data/fetched/flower_colour_review.tsv`, which carries
     #: the sentence behind every one of the 146.
+    #: V2.82 removes five rows and no colours: the catalogue was carrying five
+    #: plants twice, each under a name the flora does not accept, and the
+    #: merges took white -1 (*Spiraea alba* var. *latifolia*), purple -1
+    #: (*Stachys pilosa* var. *pilosa*), pink -2 (*Dodecatheon pulchellum* and
+    #: *Hedysarum alpinum*) and one row with no colour recorded at all
+    #: (*Urtica gracilis* subsp. *gracilis*, below). Five rows, five
+    #: decrements, all accounted for -- which is the check this snapshot is
+    #: for.
     EXPECTED = {
-        "straw": 80, "white": 79, "yellow": 79, "purple": 46, "pink": 36,
+        "straw": 80, "yellow": 79, "white": 78, "purple": 45, "pink": 34,
         "blue": 28, "cream": 14, "red": 6, "green": 5, "orange": 3, "brown": 2,
     }
 
@@ -115,9 +123,13 @@ class TestTheClassifierAgainstTheShippedData(unittest.TestCase):
         self.assertEqual(got, self.EXPECTED)
 
     def test_the_unrecorded_stay_unrecorded(self):
-        """44 rows record no flower colour. They must classify to "" — not to
-        white, which is what a naive parse of an empty hex would give."""
-        self.assertEqual(bucket_counts(_seed_rows()).get(""), 44)
+        """43 rows record no flower colour. They must classify to "" — not to
+        white, which is what a naive parse of an empty hex would give.
+
+        44 until V2.82 merged the duplicate *Urtica gracilis* row, which was
+        one of them: a nettle is wind-pollinated and has no bloom colour to
+        record."""
+        self.assertEqual(bucket_counts(_seed_rows()).get(""), 43)
 
     def test_no_seeded_hex_falls_through_unclassified(self):
         unclassified = sorted({

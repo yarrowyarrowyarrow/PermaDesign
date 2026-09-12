@@ -1906,7 +1906,7 @@ EXAMPLE_POLYCULTURES = [
         "members": [
             ('Balsam Poplar', 'overstory', 0.0, 0.0),
             ('Joe-Pye Weed', 'pollinator', 1.5, 0.0),
-            ('Shooting Star', 'pollinator', 1.1, 1.8),
+            ('Saline Shooting Star', 'pollinator', 1.1, 1.8),
             ('Showy Fleabane', 'pollinator', -0.7, 1.3),
             ('Blue Columbine', 'pollinator', -2.1, 0.0),
             ('Spring Beauty', 'herbaceous', -0.8, -1.3),
@@ -2052,7 +2052,7 @@ EXAMPLE_POLYCULTURES = [
         "members": [
             ('Prairie Buttercup', 'pollinator', 0.0, 0.0),
             ('Cut-leaved Anemone', 'pollinator', 1.5, 0.0),
-            ('Yellow Pucoon', 'pollinator', 1.1, 1.8),
+            ('Yellow Puccoon', 'pollinator', 1.1, 1.8),
             ('Long-fruited Anemone', 'pollinator', -0.7, 1.3),
             ('Crowfoot Violet', 'pollinator', -2.1, 0.0),
             ('Prairie Onion (Textile Onion)', 'pollinator', -0.8, -1.3),
@@ -2100,7 +2100,7 @@ EXAMPLE_POLYCULTURES = [
             ('Western Blue Iris', 'pollinator', 0.0, 0.0),
             ('Balsamroot', 'pollinator', 1.5, 0.0),
             ('Woolly Cinquefoil', 'pollinator', 1.5, 1.5),
-            ('Prairie Cinquefoil (Tall Cinquefoil)', 'pollinator', 0.0, 1.5),
+            ('Tall Cinquefoil', 'pollinator', 0.0, 1.5),
             ('Field Pussytoes', 'groundcover', -1.5, 1.5),
             ('Small-leaved Everlasting (Small-leaved Pussytoes)', 'groundcover', -1.5, 0.0),
             ('Veiny Meadow-Rue', 'pollinator', -1.5, -1.5),
@@ -2149,9 +2149,9 @@ EXAMPLE_POLYCULTURES = [
         "members": [
             ('Alpine Aster', 'pollinator', 0.0, 0.0),
             ('Alaska Harebell', 'pollinator', 1.5, 0.0),
-            ('Lyalls Penstemon', 'pollinator', 1.3, 1.6),
+            ("Lyall's Penstemon", 'pollinator', 1.3, 1.6),
             ('Alberta Penstemon', 'pollinator', -0.3, 1.5),
-            ('White Camas', 'pollinator', -1.9, 0.9),
+            ('Mountain Death Camas (White Camas)', 'pollinator', -1.9, 0.9),
             ('Scorpion Weed', 'pollinator', -1.4, -0.7),
             ('Rocky Mountain Beeplant', 'nitrogen_fixer', -0.5, -2.0),
             ('Sticky Goldenrod', 'pollinator', 0.9, -1.2),
@@ -2167,11 +2167,10 @@ EXAMPLE_POLYCULTURES = [
             ('Silky Lupine', 'nitrogen_fixer', 0.0, 0.0),
             ('Late Yellow Oxytropis', 'nitrogen_fixer', 1.5, 0.0),
             ('Alpine Hedysarum (Bear Root)', 'nitrogen_fixer', 1.3, 1.6),
-            ('Sweet Broom (Alpine Sweetvetch)', 'nitrogen_fixer', -0.3, 1.5),
             ('White Mountain Avens', 'groundcover', -1.9, 0.9),
             ('Yellow Mountain Avens', 'groundcover', -1.4, -0.7),
             ("MacKenzie's Hedysarum", 'nitrogen_fixer', -0.5, -2.0),
-            ('Boreale Oxytropis', 'nitrogen_fixer', 0.9, -1.2),
+            ('Boreal Oxytropis', 'nitrogen_fixer', 0.9, -1.2),
         ],
     },
     {
@@ -2254,7 +2253,7 @@ EXAMPLE_POLYCULTURES = [
             ('Alpine Bistort', 'herbaceous', 1.5, 0.0),
             ('Wood Betony (Bracted Lousewort)', 'pollinator', 1.5, 1.5),
             ('Pink Pussytoes', 'groundcover', 0.0, 1.5),
-            ('Rosy Pussytoes (Littleleaf Pussytoes)', 'groundcover', -1.5, 1.5),
+            ('Littleleaf Pussytoes', 'groundcover', -1.5, 1.5),
             ('Boreal Yarrow', 'pollinator', -1.5, 0.0),
             ('Woodland Strawberry', 'groundcover', -1.5, -1.5),
             ('Sitka Valerian', 'pollinator', -0.0, -1.5),
@@ -2292,7 +2291,7 @@ EXAMPLE_POLYCULTURES = [
             ('Palmate-leaved Coltsfoot', 'soil_builder', -1.5, 0.0),
             ('Trailing Raspberry', 'groundcover', -1.5, -1.5),
             ('Ostrich Fern', 'other', -0.0, -1.5),
-            ('Slender Nettle', 'nitrogen_fixer', 1.5, -1.5),
+            ('Stinging Nettle', 'nitrogen_fixer', 1.5, -1.5),
         ],
     },
     {
@@ -2325,7 +2324,7 @@ EXAMPLE_POLYCULTURES = [
             ('Fringed Loosestrife', 'pollinator', -1.9, 0.9),
             ('False Dragonhead (Western Obedient Plant)', 'pollinator', -1.4, -0.7),
             ('Marsh Violet', 'groundcover', -0.5, -2.0),
-            ('False Dragonhead', 'pollinator', 0.9, -1.2),
+            ("Ledingham's False Dragonhead", 'pollinator', 0.9, -1.2),
         ],
     },
     {
@@ -2366,11 +2365,11 @@ EXAMPLE_POLYCULTURES = [
     {
         "name": 'Subalpine Streamside',
         "description": 'A cool mountain streamside of spirea, larkspur and mimulus for '
-                       'moist, bright banks. Pink spirea and mountain hollyhock feed '
+                       'moist, bright banks. Meadowsweet and mountain hollyhock feed '
                        'bumble bees; river beauty and sneezeweed carry late bloom; a '
                        'clematis vine scrambles the edge.',
         "members": [
-            ('Pink Spirea (Rose Meadowsweet)', 'shrub_layer', 0.0, 0.0),
+            ('Meadowsweet', 'shrub_layer', 0.0, 0.0),
             ('Tall Larkspur', 'pollinator', 1.5, 0.0),
             ('Mountain Hollyhock', 'pollinator', 1.7, 1.2),
             ('River Beauty', 'pollinator', 0.5, 1.4),
@@ -2395,7 +2394,7 @@ EXAMPLE_POLYCULTURES = [
             ('Leafy Arnica', 'pollinator', 0.6, 2.0),
             ('Smooth Fleabane (Streamside Fleabane)', 'pollinator', -1.2, 0.9),
             ('Tall Meadow Rue', 'pollinator', -1.7, -1.2),
-            ('Marsh Hedge Nettle (Marsh Woundwort)', 'pollinator', 0.5, -1.4),
+            ('Marsh Hedge Nettle', 'pollinator', 0.5, -1.4),
         ],
     },
     {

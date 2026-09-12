@@ -69,6 +69,29 @@ that run. `scripts/rename_taxon.py` is the tool; `KNOWN_NATIVITY_CONFLICTS` is
 now **empty**, because the archive resolved the Stiff Goldenrod pair it existed
 for.
 
+**Four of those eight renames were wrong, and V2.82 found out how** — see
+[`V2.82-the-harebells-were-not-swapped.md`](docs/plans/V2.82-the-harebells-were-not-swapped.md).
+The report was about a *common* name — two harebells that read as a swapped pair
+— and the cause was a binomial: `Campanula alaskana` is a synonym of *Campanula
+rotundifolia*, which the extract on disk had already said. **A wrong scientific
+name is invisible until it is next to a similar one**, so the same comparison
+was run over every row: **26 binomials are not VASCAN's accepted name**, 5 of
+them synonyms of a name *already in the catalogue* (two pages for one plant) and
+4 of them V2.80's own renames landing on an infraspecific rank the checklist
+does not carry — read off the wrong end of an authority string. Use
+`rename_taxon.binomial()` to compare, never the eye. Five pairs merged, catalogue
+417 rows; 18 recombinations (*Galium* → *Trichogalium*, *Spartina* →
+*Sporobolus*, *Ledum* → *Rhododendron*) deliberately left as **one** open
+decision about which nomenclature the site follows, allowlisted with a reason
+each in `data_quality.KNOWN_NOMENCLATURE`, which now **fails the gate** on any
+new synonym entering the catalogue. Three tool changes worth
+knowing: `scripts/rename_common_name.py` is new and is the only safe way to
+change a common name (**the common name is the foreign key here and the
+scientific name is not** — edges join on it, slugs are built from it);
+`remove_taxon.py --merge-into` now merges field by field and de-duplicates the
+re-pointed edges; and `rename_taxon.py` **keeps** a sourced nativity when the
+new name is the accepted name the archive itself resolved the old one to.
+
 **Then the author rewrote the public copy by hand** — see
 [`V2.80-the-copy-in-the-authors-voice.md`](docs/plans/V2.80-the-copy-in-the-authors-voice.md).
 The Method and About pages are first person singular now (an institutional *we*

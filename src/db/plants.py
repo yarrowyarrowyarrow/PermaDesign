@@ -456,7 +456,7 @@ _NURSERIES_JSON_PATH    = resource_path("data", "nurseries_master.json")
 # purely to push the re-derived `plant_ranges` rows into existing installs --
 # without it the desktop keeps recommending on the old counts while the website
 # publishes the new ones.
-_SCHEMA_VERSION = 84
+_SCHEMA_VERSION = 85
 
 # Tolerance (pH units) added at each end of a plant's soil-pH bracket when
 # matching against a site's (often coarse, regional) pH estimate. See the

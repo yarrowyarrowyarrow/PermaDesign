@@ -1407,7 +1407,23 @@
    "verdict": "confirm",
    "why": "VASCAN records it native in AB, SK."
   },
-  "Campanula alaskana": {
+  "Campanula lasiocarpa": {
+   "matched": true,
+   "accepted_name": "Campanula lasiocarpa Chamisso",
+   "is_synonym": false,
+   "taxonomic_status": "accepted",
+   "provinces": {
+    "AB": "native"
+   },
+   "raw_matches": 3,
+   "has_distribution": true,
+   "taxon_rank": "species",
+   "native_provinces": "AB",
+   "origin": "native",
+   "verdict": "confirm",
+   "why": "VASCAN records it native in AB."
+  },
+  "Campanula rotundifolia": {
    "matched": true,
    "accepted_name": "Campanula rotundifolia Linnaeus",
    "is_synonym": false,
@@ -1424,22 +1440,6 @@
    "origin": "native",
    "verdict": "confirm",
    "why": "VASCAN records it native in AB, SK."
-  },
-  "Campanula lasiocarpa": {
-   "matched": true,
-   "accepted_name": "Campanula lasiocarpa Chamisso",
-   "is_synonym": false,
-   "taxonomic_status": "accepted",
-   "provinces": {
-    "AB": "native"
-   },
-   "raw_matches": 3,
-   "has_distribution": true,
-   "taxon_rank": "species",
-   "native_provinces": "AB",
-   "origin": "native",
-   "verdict": "confirm",
-   "why": "VASCAN records it native in AB."
   },
   "Canadanthus modestus": {
    "matched": true,
@@ -2173,7 +2173,7 @@
    "verdict": "confirm",
    "why": "VASCAN records it native in AB, SK."
   },
-  "Deschampsia cespitosa subsp. cespitosa": {
+  "Deschampsia cespitosa": {
    "matched": true,
    "accepted_name": "Deschampsia cespitosa (Linnaeus) Palisot de Beauvois",
    "is_synonym": false,
@@ -4621,7 +4621,7 @@
    "verdict": "confirm",
    "why": "VASCAN records it native in AB, SK."
   },
-  "Oenothera cespitosa subsp. cespitosa": {
+  "Oenothera cespitosa": {
    "matched": true,
    "accepted_name": "Oenothera cespitosa Nuttall",
    "is_synonym": false,

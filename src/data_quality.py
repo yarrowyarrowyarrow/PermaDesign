@@ -696,7 +696,185 @@ def validate_all() -> tuple[list[str], list[str]]:
         e, w = validate_nativity()
         errors.extend(e)
         warnings.extend(w)
+
+    # Names (V2.82). The gate had an opinion about every field on a row except
+    # the two a reader actually reads.
+    for validate_names in (validate_accepted_names,
+                           validate_common_name_collisions):
+        e, w = validate_names()
+        errors.extend(e)
+        warnings.extend(w)
     return errors, warnings
+
+
+#: Rows whose binomial is not VASCAN's accepted name **on purpose**, each with
+#: the reason (V2.82).
+#:
+#: Every one of these is a recent recombination the checklist has adopted and
+#: the regional floras, the nurseries and the people searching for the plant
+#: have not. Following VASCAN here would publish *Trichogalium boreale* as the
+#: name of Northern Bedstraw, which is correct and useless.
+#:
+#: **This is a holding pattern, not a policy.** Which nomenclature the site
+#: follows is one decision for the author to make once, over this whole list;
+#: the list exists so that a *new* synonym entering the catalogue fails the gate
+#: instead of joining sixteen others unnoticed. An entry here is a claim that
+#: the disagreement is known, which is why each carries a reason and why
+#: ``KNOWN_NATIVITY_CONFLICTS`` was emptied rather than left to rot.
+KNOWN_NOMENCLATURE: dict = {
+    "Avenula hookeri": "VASCAN: Helictochloa hookeri — 2011 recombination",
+    "Bromus marginatus": "VASCAN: Bromus sitchensis var. marginatus — sunk to a variety",
+    "Calamovilfa longifolia": "VASCAN: Sporobolus rigidus — 2014 Sporobolus merger",
+    "Carex raymondii": "VASCAN: Carex atratiformis — and the English names differ too, so this one needs a flora",
+    "Escobaria vivipara": "VASCAN: Pelecyphora vivipara — 2022 recombination",
+    "Galium boreale": "VASCAN: Trichogalium boreale — 2023 segregate no regional flora uses",
+    "Hedysarum mackenziei": "VASCAN: Hedysarum boreale subsp. mackenziei — and H. boreale is a separate row here",
+    "Ledum groenlandicum": "VASCAN: Rhododendron groenlandicum — Labrador Tea is sold under Ledum everywhere",
+    "Matteuccia struthiopteris": "VASCAN: Matteuccia pensylvanica — the fern is sold as struthiopteris",
+    "Oxytropis monticola": "VASCAN: Oxytropis campestris var. spicata — and O. campestris is a separate row here",
+    "Piptatherum canadense": "VASCAN: Piptatheropsis canadensis",
+    "Polemonium acutiflorum": "VASCAN: Polemonium villosum",
+    "Polygala senega": "VASCAN: Senega officinalis — 2021 segregate",
+    "Potentilla anserina": "VASCAN: Argentina anserina — Silverweed is universally Potentilla",
+    "Spartina gracilis": "VASCAN: Sporobolus hookerianus — 2014 Sporobolus merger",
+    "Spartina pectinata": "VASCAN: Sporobolus michauxianus — as above",
+    "Spiraea betulifolia": "VASCAN resolves this to Spiraea splendens var. rosea, which is PINK and this row is white — a suspect match, and the open 'Pink Spirea' question from V2.80 sits on it",
+    "Symphyotrichum hesperium": "VASCAN: S. lanceolatum subsp. hesperium — and S. lanceolatum is a separate row here",
+}
+
+
+def _accepted_names():
+    """``{queried name: record}`` from the VASCAN extract, or ``None``.
+
+    Its own function so the gate has one seam a test can hold, and so the
+    difference between *the extract says nothing about this row* and *there is
+    no extract* stays visible: the first is normal, the second means the check
+    is not running.
+    """
+    try:
+        blob = json.loads((DATA_DIR / "fetched" / "flora_nativity.json")
+                          .read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return None
+    return (blob or {}).get("results") or {}
+
+
+def validate_accepted_names() -> tuple[list[str], list[str]]:
+    """A row's binomial against the accepted name the checklist gave for it.
+
+    The comparison that was never made (V2.82). ``flora_nativity.json`` has
+    carried an ``accepted_name`` for every species since V2.80 and nothing had
+    ever compared it to the name the row is filed under, so the catalogue
+    published *Campanula alaskana* for two releases with its own extract saying
+    *Campanula rotundifolia* on the next line. It surfaced as a complaint about
+    a **common** name, because a wrong binomial is invisible until it lands
+    beside a similar one -- here, *Campanula lasiocarpa*, which made the pair
+    read as swapped.
+
+    Two failures, weighted differently:
+
+    * The accepted name **is another row in this catalogue**: an ERROR with no
+      allowlist. That is one plant on two pages, with the derived data split
+      across both -- *Dodecatheon pulchellum* and *Primula pauciflora* each
+      published the same 116 range cells.
+    * The accepted name is merely different: an ERROR unless the row is in
+      ``KNOWN_NOMENCLATURE`` with a reason, because the alternative is sixteen
+      disagreements and no way to tell them from a seventeenth that is a bug.
+    """
+    from src.taxon_names import (binomial,                   # noqa: PLC0415
+                                 is_infraspecific)
+
+    errors: list[str] = []
+    warnings: list[str] = []
+    accepted = _accepted_names()
+    if accepted is None:
+        return errors, ["accepted names: no VASCAN extract, check skipped"]
+
+    rows = [r for name in ("plants_master.json", "garden_plants.json")
+            for r in _load_json_list(DATA_DIR / name) if isinstance(r, dict)]
+    here = {(r.get("scientific_name") or "").strip() for r in rows}
+
+    for row in rows:
+        sci = (row.get("scientific_name") or "").strip()
+        record = accepted.get(sci)
+        if not isinstance(record, dict):
+            continue
+        want = binomial(record.get("accepted_name") or "")
+        if not want or want == sci:
+            continue
+        who = f"{sci} ({row.get('common_name')})"
+        # The specific shape of V2.80's four bad renames, named as itself: a row
+        # at a rank below species where the checklist answered about the
+        # species. That is not a nomenclatural disagreement, it is a taxon that
+        # does not exist, and no allowlist entry should ever excuse one.
+        if (is_infraspecific(sci) and not is_infraspecific(want)
+                and sci.startswith(want) and want not in here):
+            errors.append(
+                f"accepted names: {who} claims a rank the checklist does not "
+                f"carry — it answered about {want} at species rank. This is "
+                f"the V2.80 failure: an infraspecific epithet read off the "
+                f"wrong end of an authority string. Rename to {want}")
+        elif want in here:
+            errors.append(
+                f"accepted names: {who} is a synonym of {want}, which is "
+                f"ALSO a row in this catalogue — one plant, two species pages "
+                f"and two sets of occurrence data. Merge with "
+                f"scripts/remove_taxon.py --merge-into {want!r}")
+        elif sci not in KNOWN_NOMENCLATURE:
+            errors.append(
+                f"accepted names: {who} is filed under a name the checklist "
+                f"does not accept; it resolves to {want}. Rename with "
+                f"scripts/rename_taxon.py, or add it to "
+                f"data_quality.KNOWN_NOMENCLATURE with the reason the "
+                f"catalogue keeps the older name")
+
+    stale = sorted(set(KNOWN_NOMENCLATURE) - here)
+    if stale:
+        warnings.append(
+            f"accepted names: {len(stale)} KNOWN_NOMENCLATURE entries name "
+            f"rows that are no longer in the catalogue ({', '.join(stale)}) — "
+            f"an allowlist entry that outlives what it excused turns a "
+            f"temporary silence into a permanent one")
+    return errors, warnings
+
+
+def validate_common_name_collisions() -> tuple[list[str], list[str]]:
+    """Two rows a reader cannot tell apart (V2.82).
+
+    The common name is what the website is browsed, searched and slugified by,
+    and three pairs of rows led with the same one -- *False Dragonhead* for two
+    *Physostegia*, *Prairie Cinquefoil* for a *Potentilla* and a *Drymocallis*,
+    *Marsh Hedge Nettle* for a species and its own invalid variety. A trailing
+    parenthetical alias hid all three from the exact-match duplicate check that
+    existed, which is why this compares the **lead** name.
+
+    A shared name is an ERROR rather than a warning for a reason found in
+    V2.68: ``_unique_slugs`` resolves a collision by appending the scientific
+    name, so the day a collision appears the page **moves**, and it moves back
+    if the collision is later fixed.
+    """
+    from collections import defaultdict                      # noqa: PLC0415
+
+    errors: list[str] = []
+    lead: dict = defaultdict(list)
+    for name in ("plants_master.json", "garden_plants.json"):
+        for row in _load_json_list(DATA_DIR / name):
+            if not isinstance(row, dict):
+                continue
+            common = (row.get("common_name") or "").strip()
+            if common:
+                lead[common.split(" (")[0].strip().lower()].append(row)
+    for key, group in sorted(lead.items()):
+        if len(group) < 2:
+            continue
+        who = ", ".join(f"{r.get('scientific_name')} = "
+                        f"{r.get('common_name')!r}" for r in group)
+        errors.append(
+            f"common names: {len(group)} rows lead with {key!r} — {who}. One "
+            f"of them is wearing the other's name, or they are one plant; "
+            f"either way a reader cannot tell the pages apart and a slug "
+            f"collision moves a published URL")
+    return errors, []
 
 
 def validate_flower_colour() -> tuple[list[str], list[str]]:

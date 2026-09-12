@@ -3405,7 +3405,14 @@
         "confidence": "medium"
       }
     ],
-    "Campanula alaskana": [
+    "Campanula lasiocarpa": [
+      {
+        "ecoregion": "eastern_continental_ranges",
+        "occurrences": 164,
+        "confidence": "high"
+      }
+    ],
+    "Campanula rotundifolia": [
       {
         "ecoregion": "northern_continental_divide",
         "occurrences": 745,
@@ -3480,13 +3487,6 @@
         "ecoregion": "mid_boreal_lowland",
         "occurrences": 3,
         "confidence": "low"
-      }
-    ],
-    "Campanula lasiocarpa": [
-      {
-        "ecoregion": "eastern_continental_ranges",
-        "occurrences": 164,
-        "confidence": "high"
       }
     ],
     "Canadanthus modestus": [
@@ -5431,7 +5431,7 @@
         "confidence": "low"
       }
     ],
-    "Deschampsia cespitosa subsp. cespitosa": [
+    "Deschampsia cespitosa": [
       {
         "ecoregion": "eastern_continental_ranges",
         "occurrences": 29,
@@ -5514,63 +5514,6 @@
       {
         "ecoregion": "slave_river_lowland",
         "occurrences": 4,
-        "confidence": "low"
-      }
-    ],
-    "Dodecatheon pulchellum": [
-      {
-        "ecoregion": "northern_continental_divide",
-        "occurrences": 113,
-        "confidence": "high"
-      },
-      {
-        "ecoregion": "aspen_parkland",
-        "occurrences": 86,
-        "confidence": "high"
-      },
-      {
-        "ecoregion": "eastern_continental_ranges",
-        "occurrences": 45,
-        "confidence": "high"
-      },
-      {
-        "ecoregion": "western_alberta_upland",
-        "occurrences": 30,
-        "confidence": "high"
-      },
-      {
-        "ecoregion": "moist_mixed_grassland",
-        "occurrences": 20,
-        "confidence": "high"
-      },
-      {
-        "ecoregion": "boreal_transition",
-        "occurrences": 19,
-        "confidence": "medium"
-      },
-      {
-        "ecoregion": "fescue_grassland",
-        "occurrences": 15,
-        "confidence": "medium"
-      },
-      {
-        "ecoregion": "mixed_grassland",
-        "occurrences": 9,
-        "confidence": "medium"
-      },
-      {
-        "ecoregion": "mid_boreal_uplands",
-        "occurrences": 4,
-        "confidence": "low"
-      },
-      {
-        "ecoregion": "slave_river_lowland",
-        "occurrences": 4,
-        "confidence": "low"
-      },
-      {
-        "ecoregion": "cypress_upland",
-        "occurrences": 3,
         "confidence": "low"
       }
     ],
@@ -8329,7 +8272,7 @@
         "confidence": "high"
       }
     ],
-    "Hedysarum alpinum": [
+    "Hedysarum americanum": [
       {
         "ecoregion": "aspen_parkland",
         "occurrences": 454,
@@ -8384,33 +8327,6 @@
         "ecoregion": "slave_river_lowland",
         "occurrences": 12,
         "confidence": "medium"
-      }
-    ],
-    "Hedysarum americanum": [
-      {
-        "ecoregion": "eastern_continental_ranges",
-        "occurrences": 16,
-        "confidence": "medium"
-      },
-      {
-        "ecoregion": "aspen_parkland",
-        "occurrences": 9,
-        "confidence": "medium"
-      },
-      {
-        "ecoregion": "fescue_grassland",
-        "occurrences": 9,
-        "confidence": "medium"
-      },
-      {
-        "ecoregion": "northern_continental_divide",
-        "occurrences": 4,
-        "confidence": "low"
-      },
-      {
-        "ecoregion": "peace_lowland",
-        "occurrences": 3,
-        "confidence": "low"
       }
     ],
     "Hedysarum boreale": [
@@ -16504,43 +16420,6 @@
         "confidence": "low"
       }
     ],
-    "Stachys pilosa var. pilosa": [
-      {
-        "ecoregion": "boreal_transition",
-        "occurrences": 14,
-        "confidence": "medium"
-      },
-      {
-        "ecoregion": "aspen_parkland",
-        "occurrences": 11,
-        "confidence": "medium"
-      },
-      {
-        "ecoregion": "northern_continental_divide",
-        "occurrences": 10,
-        "confidence": "medium"
-      },
-      {
-        "ecoregion": "slave_river_lowland",
-        "occurrences": 9,
-        "confidence": "medium"
-      },
-      {
-        "ecoregion": "peace_lowland",
-        "occurrences": 4,
-        "confidence": "low"
-      },
-      {
-        "ecoregion": "fescue_grassland",
-        "occurrences": 3,
-        "confidence": "low"
-      },
-      {
-        "ecoregion": "moist_mixed_grassland",
-        "occurrences": 3,
-        "confidence": "low"
-      }
-    ],
     "Stuckenia pectinata": [
       {
         "ecoregion": "aspen_parkland",
@@ -17563,13 +17442,6 @@
       {
         "ecoregion": "hay_river_lowland",
         "occurrences": 3,
-        "confidence": "low"
-      }
-    ],
-    "Urtica gracilis subsp. gracilis": [
-      {
-        "ecoregion": "northern_continental_divide",
-        "occurrences": 6,
         "confidence": "low"
       }
     ],

@@ -365,11 +365,15 @@ class ModelAssetsTest(unittest.TestCase):
                     f"{rec.get('scientific_name')}: no baked {want} variant "
                     f"for {prefix}.{form_of(rec)} — rebuild html/assets/models")
                 checked += 1
-        # 316 today (229 herbaceous + 55 shrubs + 32 groundcover). Grass, sedge,
-        # vine and aquatic stay outside this guard: they map to layer.*
-        # archetypes carrying plain interchangeable variants rather than
-        # morphology ones. The floor only has to catch the lookup going empty.
-        self.assertGreater(checked, 300, "catalogue stopped resolving")
+        # 298 today; 316 when this was written, and the drift is the catalogue
+        # shrinking rather than the lookup failing — V2.74 and V2.80 removed
+        # introduced species and V2.82 merged five rows that were one plant
+        # filed twice. Grass, sedge, vine and aquatic stay outside this guard:
+        # they map to layer.* archetypes carrying plain interchangeable
+        # variants rather than morphology ones. The floor only has to catch the
+        # lookup going empty, so it sits well below the count on purpose —
+        # a floor set one row under it fails on every legitimate removal.
+        self.assertGreater(checked, 250, "catalogue stopped resolving")
 
     def test_layer_and_fauna_keys_match_viewer(self):
         layers = {k.split(".", 1)[1]: e for k, e in self.mf["plants"].items()
